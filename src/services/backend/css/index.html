@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s-track</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>S-Track Consumption Monitor</h1>
+  </header>
+
+  <main>
+    <!-- Authentication Section -->
+    <section id="auth-section">
+      <div class="auth-form" id="signup-form">
+        <h2>Sign Up</h2>
+        <input type="text" id="first-name" placeholder="First Name" required>
+        <input type="text" id="middle-name" placeholder="Middle Name" required>
+        <input type="text" id="last-name" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="signup()">Sign Up</button>
+      </div>
+
+      <div class="auth-form" id="login-form">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email Address" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+      </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard-section" style="display: none;">
+      <h2>Welcome, <span id="user-name"></span></h2>
+      <div class="stats">
+        <p><strong>Total Consumption:</strong> <span id="consumption">0</span> kWh</p>
+        <p><strong>Estimated Cost:</strong> $<span id="cost">0.00</span></p>
+      </div>
+      <div id="energy-saving-tips">
+        <h3>Energy-Saving Tips</h3>
+        <ul>
+          <li>Use energy-efficient appliances.</li>
+          <li>Turn off lights when not in use.</li>
+          <li>Set timers for heavy-duty appliances.</li>
+        </ul>
+      </div>
+      <button onclick="logout()">Logout</button>
+    </section>
+
+    <!-- Subscription Section -->
+    <section id="subscription-section" style="display: none;">
+      <h2>Subscription Plan</h2>
+      <p>Get personalized recommendations and premium features for $5/month.</p>
+      <button onclick="subscribe()">Subscribe Now</button>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Redirect to dashboard.html if the user is already logged in
+    if (localStorage.getItem("isLoggedIn")) {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>
