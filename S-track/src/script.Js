@@ -1,4 +1,25 @@
-// script.js
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Signup from './Signup.html';
+import Login from './Login.html';
+import Dashboard from './Dashboard.html';
+import index from './index.html';
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="index" component={index} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 function signup() {
   // Retrieve form values (for demonstration purposes)
