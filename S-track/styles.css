@@ -136,3 +136,72 @@ body {
   .support button:hover {
     background-color: #45a049;
   }
+
+/* Style for the container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Heading style */
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header row styling */
+table thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+table thead th {
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+/* Table data styling */
+table tbody td {
+    padding: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternating row background color */
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+table tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    table thead {
+        font-size: 1rem;
+    }
+
+    table tbody td {
+        font-size: 0.9rem;
+    }
+}
