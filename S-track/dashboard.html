@@ -29,6 +29,34 @@
                 <!-- Data rows will be inserted dynamically -->
             </tbody>
         </table>
+    <script>
+        // Fetch data from the backend and display it in the table
+        async function fetchEnergyData() {
+            try {
+                const response = await fetch('http://localhost:8000/api/energy-usage/');
+                const data = await response.json();
+
+                const tableBody = document.getElementById('energy-data');
+                tableBody.innerHTML = ''; // Clear existing data
+
+                data.forEach(entry => {
+                    const row = `
+                        <tr>
+                            <td>${entry.device_id}</td>
+                            <td>${new Date(entry.timestamp).toLocaleString()}</td>
+                            <td>${entry.energy_consumed_kwh}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error('Error fetching energy data:', error);
+            }
+        }
+
+        // Load data on page load
+        window.onload = fetchEnergyData;
+    </script>
      <!-- Dashboard Section -->
      <section id="dashboard-section">
         <h2>Welcome, <span id="user-name"></span></h2>
