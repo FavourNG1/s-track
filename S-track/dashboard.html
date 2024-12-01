@@ -18,18 +18,18 @@
     </div>
       <h2>Welcome</h2>
       <h2>Energy Usage Data</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Device ID: 32546908</th>
-                    <th>Timestamp</th>
-                    <th>Energy Consumed (5068kWh)</th>
-                </tr>
-            </thead>
-            <tbody id="energy-data">
-                <!-- Data rows will be inserted dynamically -->
-            </tbody>
-        </table>
+    <table style="border-collapse: collapse; width: 100%; margin: 20px 0; border: 1px solid #000; text-align: left;">
+           <thead>
+               <tr style="background-color: #f2f2f2; border-bottom: 2px solid #000;">
+                   <th style="padding: 10px; border-right: 1px solid #000;">Device ID: 32546908</th>
+                   <th style="padding: 10px; border-right: 1px solid #000;">Timestamp</th>
+                   <th style="padding: 10px;">Energy Consumed (5068kWh)</th>
+               </tr>
+           </thead>
+           <tbody id="energy-data" style="text-align: left;">
+               <!-- Data rows will be inserted dynamically -->
+           </tbody>
+    </table>
     <script>
         // Fetch data from the backend and display it in the table
         async function fetchEnergyData() {
